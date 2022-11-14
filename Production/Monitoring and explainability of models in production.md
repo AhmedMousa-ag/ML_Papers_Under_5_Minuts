@@ -1,6 +1,6 @@
 # Spotlight
 
-Authors spot light on the curability of provisioning ML models, where they discuess key ares including *model performance*, *data monitoring*, *detecting outlier drifts*, and *model explain-ability* as well as open source solutions.
+Authors spot light on the cruciality of provisioning ML models, where they discuess key areas including *model performance*, *data monitoring*, *detecting outlier drifts*, and *model explain-ability* as well as open source solutions.
 ## Challenges
 
 * Design systems that monitor live deployments and take action or raise alerts when events impacts model performance.
