@@ -1,16 +1,15 @@
 # Monitoring and Explainability of Models in Production
 
+Authors: Janis Klaise, Arnaud Van Looveren, Clive Cox, Giovanni Vacanti and Alexandru Coca.
+
 Authors spot light on the cruciality of provisioning ML models, where they discuess key areas including *model performance*, *data monitoring*, *detecting outlier drifts*, and *model explain-ability* as well as open source solutions.
+
 ## Challenges
 
 * Designing systems that monitor live deployments and take action or raise alerts when events impacts model performance.
-
 * Inability to detect model performance degradation can lead to stale models and increased technical debt.
-  
 * Measuring model performance implies having timely access to labels for live data which is mostly not available due to operational and financial constraints.
-  
 * Monitoring systems requires functionality to determine when significant changes to data and predictive distributions happen.
-
 * Building trust in ML systems and make decision process transparent as models often are *black boxes*.
 
 # Monitoring
@@ -64,7 +63,7 @@ Explanation algorithms can be grouped into:
 
 Which assumes access to model internals such as being able to take dradients with respect to the input.
 
-### Black-Box 
+### Black-Box
 
 Which doesn't assume anything beyond being able to access the prediction API endpoint. and the only way to interact with the model is by requesting predictions.
 
