@@ -5,8 +5,7 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### Production
 
-1- [Monitoring and explainability of models in production](Production/Monitoring%20and%20explainability%20of%20models%20in%20production.md)
-
+ [Monitoring and explainability of models in production](Production/Monitoring%20and%20explainability%20of%20models%20in%20production.md) - [Paper Link](https://arxiv.org/pdf/2007.06299v1.pdf)
 
 
 
