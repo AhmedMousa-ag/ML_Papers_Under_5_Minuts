@@ -1,12 +1,14 @@
-# Spotlight
+# Monitoring and Explainability of Models in Production
 
 Authors spot light on the cruciality of provisioning ML models, where they discuess key areas including *model performance*, *data monitoring*, *detecting outlier drifts*, and *model explain-ability* as well as open source solutions.
 ## Challenges
 
-* Design systems that monitor live deployments and take action or raise alerts when events impacts model performance.
+* Designing systems that monitor live deployments and take action or raise alerts when events impacts model performance.
 
 * Inability to detect model performance degradation can lead to stale models and increased technical debt.
+  
 * Measuring model performance implies having timely access to labels for live data which is mostly not available due to operational and financial constraints.
+  
 * Monitoring systems requires functionality to determine when significant changes to data and predictive distributions happen.
 
 * Building trust in ML systems and make decision process transparent as models often are *black boxes*.
@@ -15,17 +17,17 @@ Authors spot light on the cruciality of provisioning ML models, where they discu
 
 ## Performance and metrics
 
-For live data the number of frequency of collected labels depends on the application, for example time-series prediction or interned ad serving labels are automatic, but for many other applications labels are expensive to produce such as medical diagnostic system based on image recognition which requires domain knowledge and time consuming.
+For live data the frequency of collected labels depends on the application, for example time-series prediction or internet ad serving labels are automatic, but for many other applications labels are expensive to produce such as medical diagnostic system based on image recognition which requires domain knowledge and time consuming.
 
 A fundamental draw back of uni-variate metrics is that correlations between features are not captured. and multivariate metrics such as covariance matrices and multivariate histograms remain difficult to implement due to increased computational cost and curse of dimensionality as well as the need for online update rule.
 
 ## Outlier Detection
 
-ML models often fail to generalize outside of the training data distribution and models are typically not well calibrated which can lead to overconfident predictions on out of distribution instances. there for **outlier detection** is a key to flag anomalies whose model predictions can't be trusted.
+ML models often fail to generalize outside of the training data distribution and models are typically not well calibrated which can lead to overconfident predictions on out of distribution instances. there for *outlier detection* is a key to flag anomalies whose model predictions can't be trusted.
 
 The type of outlier detector depends on the modality, dimensionality of the data, availability of labeled normal and outlier data and whether the detector is pre-trained (offline) or updated online.
 
-Pre-trained detector can be deployed as a separate static ML model while the online detector is deployed as a stateful application.
+*Pre-trained detector* can be deployed as a separate static ML model while the online detector is deployed as a stateful application.
 
 It is important to note that the problem of unsupervised anomaly detection for real-world data is far from solved "e.g. natural images or noisy times series". though different studies on image data also illustrate that generative density models can assign higher likelihood values to out-of-distribution instances compared to inlier data.
 
@@ -38,7 +40,7 @@ We can distinguish co-variate shift from label shift of the model predictions.
 
 2- Label shift happens when *p(y)* changes but the conditional *p(x|y)* does not.
 
-In practice for high dimensional data to work such as images, a dimensionality reduction must be applied before applying the hypothesis test. other observations shows that randomly initialized encoders and black box dimensionality reduction are promising pre-processing methods, followed by a two-sample test such as maximum mean discrepancy for multivariate case in combination with a permutation test to obtain p-values.
+In practice for high dimensional data "such as images" to work, a dimensionality reduction must be applied before applying the hypothesis test. other observations shows that randomly initialized encoders and black box dimensionality reduction are promising pre-processing methods, followed by a two-sample test such as maximum mean discrepancy for multivariate case in combination with a permutation test to obtain p-values.
 
 ## Deploying Model Monitoring
 
