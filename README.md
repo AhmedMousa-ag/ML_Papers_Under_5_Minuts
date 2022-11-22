@@ -10,7 +10,7 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### Computer Vision
 
- [DiffusionDet: Diffusion Model for Object Detection] (Computer%20Vision/Diffusion%20Model%20for%20Object%20Detection.md) - [Paper Link] (https://arxiv.org/pdf/2211.09788v1.pdf)
+ [DiffusionDet: Diffusion Model for Object Detection](Computer%20Vision/Diffusion%20Model%20for%20Object%20Detection.md) - [Paper Link](https://arxiv.org/pdf/2211.09788v1.pdf)
 
 # Contribution
 
