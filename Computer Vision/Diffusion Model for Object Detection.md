@@ -8,13 +8,13 @@ Author proposes DiffusionDet, a new framework that formulates object detection a
 
 Authors designed a novel framework that directly detects objects from a set of random boxes. starting from purely random boxes, which do not contain learnable parameters that need to be optimized in training, they expect to gradually refine the positions and sizes of these boxes until they perfectly cover the targeted objects.
 
-$ Figure 1
+![image](https://user-images.githubusercontent.com/59775002/203274521-fe1015f0-45a8-4b32-8620-03d7d5f2a99e.png)
 
 ## Approach
 
 ### Architecture
 
-$ Figure 3
+![image](https://user-images.githubusercontent.com/59775002/203274049-ba16adbd-0da6-476c-8ccb-6a9e30bc93a6.png)
 
 Since the diffusion model generates data samples iteratively, it needs to run model $f0$ multiple times at the inference stage. However, it would be computationally intractable to directly apply $f0$ on the raw image at every iterative step. Therefore, we propose to separate the whole model into two parts, *image encoder* and *detection decoder*, where the former runs only once to extract a deep feature representation from the raw input image *x*, and the latter takes this deep feature as condition, instead of the raw image, to progressively refine the box predictions from noisy boxes *xt*.
 
@@ -140,7 +140,5 @@ To make inference better align with training, authors propose the strategy of *b
 
 Authors compared DiffusionDet with previous detectors on MS-COCO and LVIS dataset. Authors adopted 500 boxes for both training and inference in this subsection.
 
-$ Table 3
-
-
+![image](https://user-images.githubusercontent.com/59775002/203274252-6ee06245-1162-4c5f-aac9-1a23748e9c1e.png)
 DiffusionDet ablation experiments on MS-COCO. Aurhors report AP, AP 50 , and AP 75 . If not specified, the default setting is: the backbone is ResNet-50 with FPN, the signal scale is 2.0, ground-truth boxes padding method is concatenating Gaussian random boxes, DDIM and box renewal are used in sampling step, where the score threshold in box renewal is 0.5, both training and evaluation use 300 boxes. Default settings are marked in gray .
