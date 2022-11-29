@@ -20,7 +20,7 @@ To encourge the new extractor to learn diverse and discriminative features for n
 
 ## Methods
 
-$Figure 2
+![image](https://user-images.githubusercontent.com/59775002/204486336-5cf1e05f-c988-4f1f-bd2f-48b655e0f725.png)
 
 ### Method Overview
 
@@ -44,7 +44,9 @@ Instead of assuming the perior distribution for $t$-th step which is unimodal, t
 
 #### Training Loss
 
-The model learns with cross-entropy loss on memory and incoming data as follows: $Equetion loss
+The model learns with cross-entropy loss on memory and incoming data as follows: 
+
+![image](https://user-images.githubusercontent.com/59775002/204486482-c2bd68f5-b01b-47de-a945-4d0eec66f6a4.png)
 
 Where $xi$ is image and $yi$ is the corresponding label. To enforce the network to learn the diverse and discriminative feature for novel concepts, we further develop an auxiliary loss operating on the novel feature $Ft(x)$. Specifically, we introduce and auxiliary classifier, which predicts the probability $p H at (y|x) = Softmax(H t a (F t (x))$ to encourge the network to learn features to discriminate between old and new concepts, the label space of  $H t a is |Y t |+1$ including the new category set $Yt$ and other class by treating all old concepts as one category. Thusly, they introduce the auxiliary loss and obtain the expandable representation loss as follows: $L ER = L H t + λ a L H at$ where $λ a$ is the hyper-parameter to control the effect of the auxiliary classifier. It is worth noting that $λ a =0$ for first step $t$ =1.
 
@@ -62,15 +64,19 @@ During training $φ t (x)$ is $F t (x)$ with the softmasks. For inference, we as
 
 #### Mask Learning
 
-During epoch, a linear annealing schedule is applied for $s$ as follows: $Eqution 8 
+During epoch, a linear annealing schedule is applied for $s$ as follows: 
+
+![image](https://user-images.githubusercontent.com/59775002/204486675-fa171692-579a-4595-aaa7-b373cc9eaf1a.png)
 
 where $b$ is the batch index, $s max >>1 $ is the hyper-parameter to control the schedule, $B$ is the number of batches in one epoch. The training epoch starts with all channels activated in a uniform way. Then the mask is progressively binarized with the increasing of batch index within epoch.
 
 #### Sparsity Loss
 
-At every step, we encourge the model to maximally reduce the number of parameters with a minimal performance drop. Motivated by this, we add a sparsity loss based on the ratio of used weights in all available weights: $Eqution 10
+At every step, we encourge the model to maximally reduce the number of parameters with a minimal performance drop. Motivated by this, we add a sparsity loss based on the ratio of used weights in all available weights: ![image](https://user-images.githubusercontent.com/59775002/204486800-92a9facd-bb51-4eee-b6ee-33a85001814f.png)
 
-where $L$ is the number of layers, $Kt$ is the kernel size of convolution layer $l$, layer $l=0$ refers to input image, and $||mo||1=3$ after adding the sparsity loss, the final loss function is: $Eqution 11
+where $L$ is the number of layers, $Kt$ is the kernel size of convolution layer $l$, layer $l=0$ refers to input image, and $||mo||1=3$ after adding the sparsity loss, the final loss function is: 
+
+![image](https://user-images.githubusercontent.com/59775002/204486926-1b6bc65e-9927-4c47-9b72-05aae36994a4.png)
 
 where $λ s$ is the hyper-parameter to control the model size.
 
@@ -80,4 +86,4 @@ At the representation learning stage, we re-train the classifier head in order t
 
 ## Comparison between other methodes
 
-$ Figure 1
+![image](https://user-images.githubusercontent.com/59775002/204487039-b938406e-ac9a-4230-848b-a9dc12cf778c.png)
