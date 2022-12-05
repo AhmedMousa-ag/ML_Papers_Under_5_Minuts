@@ -11,8 +11,13 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 ### Computer Vision
 
  [DiffusionDet: Diffusion Model for Object Detection](Computer%20Vision/Diffusion%20Model%20for%20Object%20Detection.md) - [Paper Link](https://arxiv.org/pdf/2211.09788v1.pdf)
- 
- ### Others
+
+### NLP
+
+[DiffusionBERT: Improving Generative Masked Language Models with](/NLP/Improving%20Generative%20Masked%20Language%20Models%20with%20Diffusion%20Models.md) - [Paper Link](https://arxiv.org/pdf/2211.15029v2.pdf)
+
+### Others
+
  [Dynamically Expandable Representation for Class Incremental Learning](Others/Dynamically%20Expandable%20Representation%20for%20Class%20Incremental%20Learning.md) - [Paper Link](https://arxiv.org/pdf/2103.16788v1.pdf)
 
 # Contribution
