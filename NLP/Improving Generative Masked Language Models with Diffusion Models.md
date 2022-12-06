@@ -6,7 +6,6 @@ Authors leverage pre-trained NLP models (e.g BERT) as a good initialization for 
 
 ## Introduction
 
-
 Applying diffusion models to text data is still challenging and under-explored due to the discrete nature of the text.
 
 Prior works can be divided into two methods, 1- extending diffusion models to discrete state spaces, 2- performing the diffusion process and its reverse in the continuous domain and bridging the continuous and discrete domain through embedding and rounding.
@@ -39,7 +38,6 @@ By the end we can derive a training objective to optimize $p θ (x _t −_1 |x_t
 
 ### Spindle Noise Schedule
 
-
 The noise schedule in the continuous domain, such as the linear schedule and the cosine schedule, has shown to be important to the performance of diffusion models.
 
 In contrast to the continuous domain where the noise can be easily controlled by the variance of the Gaussian, (1) *it's less obvious how to control the degree of noise added at each step in the discrete domain*. For the discrete domain, the noise schedule $β t = (T − t + 1)^-1$ has been explored for the case of the uniform transition matrix and the absorbing-state transition matrix. However, (2) *such a schedule assumes all tokens carry the same amount of information and does not consider the linguistic difference among the tokens in a sequence. Besides*, (3) *it violates the easy-first-generation nature of denoising language models.* That is, the model tends to generate tokens that are most frequently appearing (and is least surprising) in the training corpus to achieve a higher likelihood. As the context becomes richer, more details come up in the sequence,
@@ -69,10 +67,3 @@ Typically, a diffusion model takes as input a noised sample and the time step to
 **Prefix Time Embedding** Prompting language models by prepending trainable soft tokens to the input sequence has shown promising results recently (Lester et al., 2021; Sun et al., 2022). Hence, we also explore including a time step token embedding $v(t)$ as a prefix of the input token embeddings $v(x^1_t), v(x^2_t ), · · · , v(x^n_t )$. In particular, the time step token is inserted in between the [CLS] token and the input sequence. These added time step token embeddings are trained along with the PLM.
 
 **Time-Agnostic Decoding** Another alternative is not to explicitly incorporate the time step $t$ because it can be implied by the noised sample $x_t$ . In contrast to the image data, it is easier to implicitly infer the diffusion time step by counting the number of corrupted tokens (i.e., [MASK]) in the noised sequence. In this way, the PLM has to perform iterative decoding while being ignorant of the current time step, i.e., $p θ (x_t−_1 |x_t )$.
-
-
-## Comparison on BLEU Scores
-
-![image](https://user-images.githubusercontent.com/59775002/205863820-e288f81b-e398-4c67-b88f-d245891218c2.png)
-![image](https://user-images.githubusercontent.com/59775002/205863923-bcdaf345-c2ba-41df-904d-864413e20103.png)
-
