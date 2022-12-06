@@ -15,11 +15,11 @@ $ Figure 1
 
 However, none of these works leveraged pre-trained language models "PLM". So authors suggest that in the forward process of diffusion model to add small amount of noise gradually to the data. Then a neural network ($p θ$) is employed to learn the reverse process step by step. Such a denoising neural network is naturally related to a wide class of "PLMs" that are pre-trained with denoising objectives such as **BERT**, hence pre-trained denoising language models can serve as a good starting point to learn the reverse diffusion process.
 
-In the discrete domain, the forward diffusion process can be implemented by a chain of transition matrices that gradually corrupt the clean text. As shown in Figure 1, the clean text "Hello world !" is gradually corrupted into " [MASK]  [MASK]  [MASK]" during the diffusion process. In this work, authors explore using pre-trained denoising language model to learn the reverse diffusion process and demonstrate their advantages in accelerating convergence and improving generation quality. Further, they propose a new noise schedule of the forward process based on the principle of distributing the corrupted information uniformly across the forward process. The noise schedule, called *spindle schedule, generates noise for $Xt$ conditioned not only on $x t−1$ but also on $x0$, making the forward process non-Markovian without changing the original training objective, Note that the denoising model takes as input $xt$ and time step $t$ to predict $xt-1$, where $t$ is unseen during the pre-training of language models so they investigate several ways of incorporating the time step into PLMs. As a result, they found that the best result is achieved by throwing away the time information, which they call *time-agnostic decoding* (TAD).
+In the discrete domain, the forward diffusion process can be implemented by a chain of transition matrices that gradually corrupt the clean text. As shown in Figure 1, the clean text "Hello world !" is gradually corrupted into " [MASK]  [MASK]  [MASK]" during the diffusion process. In this work, authors explore using pre-trained denoising language model to learn the reverse diffusion process and demonstrate their advantages in accelerating convergence and improving generation quality. Further, they propose a new noise schedule of the forward process based on the principle of distributing the corrupted information uniformly across the forward process. The noise schedule, called *spindle schedule, generates noise for $Xt$ conditioned not only on $x t−1$ but also on $x0$, making the forward process non-Markovian without changing the original training objective, Note that the denoising model takes as input $xt$ and time step $t$ to predict $x_t-_1$, where $t$ is unseen during the pre-training of language models so they investigate several ways of incorporating the time step into PLMs. As a result, they found that the best result is achieved by throwing away the time information, which they call *time-agnostic decoding* (TAD).
 
 ## DiffusionBERT
 
-In contrast to recently proposed diffusion models for text, e.g.,Diffusion-LM and DIffuSeq which are based on *continuous* diffusion models, authors instead explore *discrete* diffusion models to integrate PLMs as the backbone. We first introduce a specific instance of discrete diffusion models, which considers a transition matrix with an absorbing state for the sake of using PLMs. Secondly, they introduce a new noise schedule of the forward diffusion process, called spindle schedule, which is based on the principle of distributing the corrupted information uniformly across the forward process, Then authors investigate several alternatives of incorporating the time step into PLMs for predicting $xt-1$ given $xt$ and $t$.
+In contrast to recently proposed diffusion models for text, e.g.,Diffusion-LM and DIffuSeq which are based on *continuous* diffusion models, authors instead explore *discrete* diffusion models to integrate PLMs as the backbone. We first introduce a specific instance of discrete diffusion models, which considers a transition matrix with an absorbing state for the sake of using PLMs. Secondly, they introduce a new noise schedule of the forward diffusion process, called spindle schedule, which is based on the principle of distributing the corrupted information uniformly across the forward process, Then authors investigate several alternatives of incorporating the time step into PLMs for predicting $x_t-_1$ given $xt$ and $t$.
 
 ### Diffusion Models with a Discrete Abosrbing State
 
@@ -29,11 +29,11 @@ $ Eqution 6
 
 Where [M] is the abbreviation of [MASK]. Such a Markov process converges to a stationary distribution $q(x T )$, which places all probability mass on a sequence with all [MASK] tokens.
 
-The $t$-step marginal $ q(x it |x i 0 )$ can be easily obtained in a closed form,
+The $t$-step marginal $ q(x^i_t |x^i_0 )$ can be easily obtained in a closed form,
 
 $ Eqution 7
 
-By the end we can derive a training objective to optimize $p θ (x t−1 |x t , t)$ and generate a sample by performing the reverse diffusion process:
+By the end we can derive a training objective to optimize $p θ (x _t −_1 |x_t , t)$ and generate a sample by performing the reverse diffusion process:
 
 $ Eqution 8
 
