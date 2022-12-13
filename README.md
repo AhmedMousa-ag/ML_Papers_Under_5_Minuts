@@ -8,6 +8,8 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
  [Monitoring and explainability of models in production](Production/Monitoring%20and%20explainability%20of%20models%20in%20production.md) - [Paper Link](https://arxiv.org/pdf/2007.06299v1.pdf)
 
+[DDG-DA: Data Distribution Generation for Predictable Concept Drift Adaptation](Production/Data%20Distribution%20Generation%20for%20Predictable%20Concept%20Drift%20Adaptation.md) - [Paper Link](https://arxiv.org/pdf/2201.04038v2.pdf)
+
 ### Computer Vision
 
  [DiffusionDet: Diffusion Model for Object Detection](Computer%20Vision/Diffusion%20Model%20for%20Object%20Detection.md) - [Paper Link](https://arxiv.org/pdf/2211.09788v1.pdf)
