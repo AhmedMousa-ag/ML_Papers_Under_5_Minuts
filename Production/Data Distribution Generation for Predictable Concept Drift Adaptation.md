@@ -7,15 +7,15 @@ Authors propose a novel method DDG-DA that can effectively forecast the evolutio
 
 ## Introduction
 
-$ Figure 1
+![image](https://user-images.githubusercontent.com/59775002/207271208-534ea5c5-8149-4adf-bc7e-de9e7f587bd6.png)
 
 To handle concept drift, previous studies usually leverage a two-step approach. Particularly, the first step is detecting the occurrence of concept drift in the streaming data, followed by the second step, if concept drift does occur, which adapts the model with new coming data by training a new model purely with the latest data or making an ensemble between the new model with the current one, or fine-tuning the current model with latest data.
 
 Most of these studies share the same assumption that the latest data contains more useful information, and thus the detection of concept drift and following model adaptation is mainly applied to the latest data.
 
-$Figure 2
+![image](https://user-images.githubusercontent.com/59775002/207271652-0b673817-0426-40ce-876e-23f69fe76333.png)
 
-Most of the existing studies paid less attention to the scenarios that concept drift evolves in a gradual nonrandom way, which are in fact more common in streaming data
+Most of the existing studies paid less attention to the scenarios that concept drift evolves in a gradual nonrandom way, which are in fact more common in streaming data.
 
 In this paper, authors propose a novel method DDG-DA to predict the data distribution of the next time-step sequentially, such that the model of the downstream learning task can be trained on the data sample from the predicted distribution instead of catching up with the latest concept drift only. In practice, DDG-DA is designed as a dynamic data generator that can create sample data from previously observed data by following predicted future data distribution. In other words, DDG-DA generates the resampling probability of each historical data sample to construct the future data distribution in estimation. However, it's challenging, in reality, to train this data generator to maximize the similarity between the predicted data distribution and the ground truth future data distribution.
 
@@ -29,7 +29,7 @@ In streaming data, forecasting models are trained and adapted on historical data
 
 #### DDG-DA Learning
 
-$Figure 3
+![image](https://user-images.githubusercontent.com/59775002/207271848-25a7b307-c5a3-4910-9b67-6fe9bc1177f1.png)
 
 To bridge this gap, DDG-DA (annotated as $M Θ$ ) tries to model the concept drift and predict the test data distribution $p^{(t)}_{test}(x,y)$. The framework of DDG-DA is demonstrated in prev figure. DDG-DA will act like a weighted data sampler to resample on $D^{(t)}_{train}$ and create a new training dataset $D^{(t)}_{resame}(Θ)$ whose data distribution is $p^{(t)}_{resame}(x,y;Θ)$ (the distribution of the resampled dataset serves as the prediction of test distribution). DDG-DA tries to minimize difference between the $p^{(t)}_{resam}(x,y;Θ)$ (the predicted data distribution) and the test data distribution $p^{(t)}_{test}(x,y)$ (the ground truth data distribution).
 
@@ -41,7 +41,7 @@ For a given task $task^{(t)} ∈ Task_{test}$ ,the forecasting model is trained 
 
 ### Model Design and Learning Process
 
-$Figure 4
+![image](https://user-images.githubusercontent.com/59775002/207271979-dc04adec-3203-440b-8af2-df3fa58550ce.png)
 
 #### Feature Design
 
@@ -53,7 +53,7 @@ DDG-DA could be formalized as $q^{(t)}_{train} = M_Θ (g(D^{(t)}_{train})).g$ is
 
 $MΘ$ accepts the extracted feature and outputs the resampling probability on $D^{(t)}_{train}$. The resampled dataset's joint distribution $p^{(t)}_{resam}(x,y;Θ)$ serves as the distribution prediction. The learning target of DDG-DA is to minimize the difference between $p^{(t)}_{resam}(x,y;Θ)$ and $p6{(t)}_{test}(x,y)$. they focus on the most important concept assume the difference between $p^{(t)}_{test}(x)$ and $p^{(t)}_{resam}(x;Θ)$ are minor. The loss of DDG-DA could be reformulated as:
 
-$Eqution 1
+![image](https://user-images.githubusercontent.com/59775002/207272123-3930d403-5158-40a9-928c-edb06742f48a.png)
 
 Where $D_{KL}$ represents the Kullback-Leibler divergence.
 
@@ -61,7 +61,7 @@ Normal distribution assumption is reasonable for unknown variables and often use
 
 Summarizing losses of all training tasks, the optimization target of DDG-DA could be formalized as follows:
 
-$Eqution 3
+![image](https://user-images.githubusercontent.com/59775002/207272323-c2e635d4-57bc-48a6-ac86-8cdf80c523cb.png)
 
 DDG-DA learns knowledge from $Task_{train}$ and transfers it to unseen test tasks. In each task, DDG-DA forecasts the future data distribution and generates dataset $D^(t)_{resam}(Θ)$ Learning the forecasting models on $D^{(t)}_{resam}(Θ)$, it adapts to upcoming streaming data better.
 
@@ -71,10 +71,10 @@ DDG-DA adopts a model with a closed-form optimization solution as $y^{(t)}_{prox
 
 The resampling probability $q^{(t)}_{train}$ outputted by $M_Θ$ could be regarded as sample weights when learning forecasting models. The loss function can be formulated as:
 
-$ Equation no number two lines
+![image](https://user-images.githubusercontent.com/59775002/207272424-65c576fa-008f-48e5-9b9b-470cb508e7bc.png)
 
 Where $X^{(t)},y^{(t)}$ and $Q^{(t)}$ represent the concatenated features, labels and resampling probability in $D^{(t)}_{train}$.
 
 ## Comparison
 
-$Table 1
+![image](https://user-images.githubusercontent.com/59775002/207272520-235ed290-3885-4886-aff8-d7edd714874a.png)
