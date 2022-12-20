@@ -18,6 +18,10 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 [DiffusionBERT: Improving Generative Masked Language Models with](/NLP/Improving%20Generative%20Masked%20Language%20Models%20with%20Diffusion%20Models.md) - [Paper Link](https://arxiv.org/pdf/2211.15029v2.pdf)
 
+### Data Synthetic
+
+[TimeVAE: A Variational Auto-Encoder For Multivariate Time Series Generation](Data%20Synthetic/A%20Variational%20Auto-Encoder%20For%20Multivariate%20Time%20Series%20Generation.md) - [Paper Link](https://arxiv.org/pdf/2111.08095.pdf)
+
 ### Others
 
  [Dynamically Expandable Representation for Class Incremental Learning](Others/Dynamically%20Expandable%20Representation%20for%20Class%20Incremental%20Learning.md) - [Paper Link](https://arxiv.org/pdf/2103.16788v1.pdf)
