@@ -35,7 +35,7 @@ The first term on the RHS is the negative log-likelihood of our data given z sam
 
 ### Base TimeVAE Architecture
 
-$ Figure 1
+![image](https://user-images.githubusercontent.com/59775002/208636967-1a9fe3bf-4c22-442b-b262-35ce4fef722a.png)
 
 Note that we have not yet described the encoding and decoding functions. One may choose any models for these as long as the loss function described above is differentiable. authors method uses a combination of traditional deep learning layers.Figure 1 provides a block-diagram of the base version of TimeVAE. The base version
 excludes the custom temporal structures. It does not require any time-series specific knowledge. 
@@ -46,9 +46,9 @@ The decoder takes the sampled latent vector $z$ which is of length $m$. It is pa
 
 ### Interpretable TimeVAE
 
-$Figure 2
+![image](https://user-images.githubusercontent.com/59775002/208637099-c8ea836d-a298-48b2-bd3f-03a046547672.png)
 
-$Figure 3
+![image](https://user-images.githubusercontent.com/59775002/208637217-ba45a876-874b-4fe8-abea-4aed18e3dd84.png)
 
 Interpretability of the modeled data generation process can be acheived by injecting temporal structures to the data generation process in the decoder. The Interpretable TimeVAE uses the same encoder structure as that of the Base TimeVAE.
 
@@ -78,4 +78,4 @@ Authors train TimeVAE using the ELBO loss function defined earlier with one modi
 
 ## Comparison
 
-$Table 1
+![image](https://user-images.githubusercontent.com/59775002/208637486-82f7b1fa-d5eb-4ba5-a9cf-dc448da1a891.png)
