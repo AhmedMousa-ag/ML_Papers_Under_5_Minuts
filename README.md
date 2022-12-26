@@ -14,6 +14,8 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
  [DiffusionDet: Diffusion Model for Object Detection](Computer%20Vision/Diffusion%20Model%20for%20Object%20Detection.md) - [Paper Link](https://arxiv.org/pdf/2211.09788v1.pdf)
 
+[Scalable Diffusion Models with Transformers](Computer%20Vision/Scalable%20Diffusion%20Models%20with%20Transformers.md) - [Paper Link](https://arxiv.org/pdf/2212.09748v1.pdf)
+
 ### NLP
 
 [DiffusionBERT: Improving Generative Masked Language Models with](/NLP/Improving%20Generative%20Masked%20Language%20Models%20with%20Diffusion%20Models.md) - [Paper Link](https://arxiv.org/pdf/2211.15029v2.pdf)
