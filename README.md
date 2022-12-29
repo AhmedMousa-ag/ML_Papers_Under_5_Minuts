@@ -18,7 +18,7 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### NLP
 
-[DiffusionBERT: Improving Generative Masked Language Models with](/NLP/Improving%20Generative%20Masked%20Language%20Models%20with%20Diffusion%20Models.md) - [Paper Link](https://arxiv.org/pdf/2211.15029v2.pdf)
+[DiffusionBERT: Improving Generative Masked Language Models with Diffusion Models](/NLP/Improving%20Generative%20Masked%20Language%20Models%20with%20Diffusion%20Models.md) - [Paper Link](https://arxiv.org/pdf/2211.15029v2.pdf)
 
 ### Data Synthetic
 
