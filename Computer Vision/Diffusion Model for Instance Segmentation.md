@@ -17,8 +17,7 @@ Authors propose Diffusion-Inst, a novel framework that represents instances as i
 
 ## DiffusionInst
 
-
-![image](https://user-images.githubusercontent.com/59775002/210324447-b28b8dfa-dfe9-4f2a-a23a-2d84bf969817.png)
+![image](https://user-images.githubusercontent.com/59775002/210324434-a78ca305-f7a1-4113-9229-f1a4641949c3.png)
 
 
 Authors regard a data sample in DiffusionInts as a filter $x_0$ $=$ $θ$ for instance segmentation. The overall framework of the DiffusionInst is illustrated in the previous figure, Which contains the following components:
@@ -59,4 +58,5 @@ $m = φ(F_{mask} ; θ_0 ).$
 
 ## Comparison
 
-![image](https://user-images.githubusercontent.com/59775002/210324434-a78ca305-f7a1-4113-9229-f1a4641949c3.png)
+![image](https://user-images.githubusercontent.com/59775002/210324447-b28b8dfa-dfe9-4f2a-a23a-2d84bf969817.png)
+
