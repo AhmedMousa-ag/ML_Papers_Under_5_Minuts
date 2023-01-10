@@ -6,7 +6,8 @@ Authors designed efficient models with low parameters and FLOPs for dense predic
 
 ## Introduction
 
-$Figure 1
+![image](https://user-images.githubusercontent.com/59775002/211502953-d2efeaf0-292e-4d10-8612-6fc03af620a1.png)
+
 
 *"Can we combine the most naive Conv and MHSA to further develop a simple yet efficient block for mobile application, just like proven effective IRB?"*
 
@@ -24,7 +25,8 @@ As shown in previous Figure, 1- **Left**, authors inductively abstract a general
 
 ## Methodology
 
-$Figure 2
+![image](https://user-images.githubusercontent.com/59775002/211503045-e81f58be-d67f-4dad-9de4-17eb1144ac67.png)
+
 
 ### Meta Mobile Block
 
@@ -58,7 +60,8 @@ Also, this cascading manner can increase the expansion speed of the receptive fi
 
 **Bosting Existing Models.** To assess iRMB performance, we set $λ$ to 4 and replace standard Transformer structure in columnar DeiT and pyramid-like PVT As shown in next table, we surprisingly found that iRMB can improve performance with fewer parameters and computations in the same training setting, especially for columnar structure.
 
-$Table 2
+![image](https://user-images.githubusercontent.com/59775002/211503161-44eb2107-7945-41e8-9251-e6fcbf0f926e.png)
+
 
 ### EMO for Dense Prediction
 
@@ -75,11 +78,15 @@ When designing efficient visual models for mobile applications, authors define t
 Based on the above criteria, authors designed a ResNet-like 4-phase Efficient MOdel (EMO) based on a series of iRMBs for dense applications.
 
 **1)** For the overall framework, EMO consists of only iRMBs without diversified modules Á , which is a departure from recent efficient methods in terms of designing idea.
+
 **2)** For the specific module, iRMB consists of only standard convolution and multi-head self-attention without other complex operators. Also, benefitted by DW-Conv, iRMB can adapt to down-sampling operation through the stride and does not require any position embeddings for introducing inductive bias to MHSA.
-3) For variant settings, authors employ gradually increasing expansion rates and channel numbers.
+
+**3)** For variant settings, authors employ gradually increasing expansion rates and channel numbers.
 
 ## Comparison
 
-$Table 6
+![image](https://user-images.githubusercontent.com/59775002/211503300-b0854dfe-82f4-4ec4-b638-280d4c02b514.png)
 
-$Table 7
+
+![image](https://user-images.githubusercontent.com/59775002/211503388-ef91e327-30bc-457a-87b0-341e3a846208.png)
+
