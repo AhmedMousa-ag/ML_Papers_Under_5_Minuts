@@ -32,6 +32,8 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 [Dynamically Expandable Representation for Class Incremental Learning](Others/Dynamically%20Expandable%20Representation%20for%20Class%20Incremental%20Learning.md) - [Paper Link](https://arxiv.org/pdf/2103.16788v1.pdf)
 
+[Deep Differentiable Logic Gate Networks](Others/Deep%20Differentiable%20Logic%20Gate%20Networks.md) - [Paper Link](https://arxiv.org/pdf/2210.08277v1.pdf)
+
 # Contribution
 
 If you want to add your summarization to papers you read, feel free to Pull Request.
