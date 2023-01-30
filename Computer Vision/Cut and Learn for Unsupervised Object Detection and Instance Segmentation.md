@@ -24,7 +24,7 @@ Secondly, they propose a simple loss-dropping strategy to train detectors using 
 
 ## Method
 
-$ Figure 2
+
 
 As illustrated in previous figure, authors propose MaskCut (See next figure) that generates multiple binary masks per image using self-supervised features from DINO. Second, they show a dynamic loss-dropping strategy, called DropLoss that can learn a detector from MaskCut's initial masks while encouraging the model to explore objects missed by MaskCut. Third, they further improve the performance of their method through multiple rounds of self-training
 
@@ -32,7 +32,8 @@ Preliminaries
 
 **Normalized Cuts** (Ncut) treats the image segmentation problem as a graph partitioning task. They construct a fully connected undirected graph via representing each image as a node. Each pair of nodes is connected by edges with weights $W_{ij}$ that measure the similarity of connected nodes. NCut minimizes the cost of partitioning the graph into two sub-graphs, a bipartition, by solving a generalized eigenvalue system for finding the eigenvector $x$ that corresponds to the second smaller eigenvalue $λ$, where $D$ is a $N ×N$ diagonal matrix $P$ with $d(i) = ∑_j W{_ij}$ and $W$ is a $N×N$ symmetrical matrix.
 
-$Equation 1
+![image](https://user-images.githubusercontent.com/59775002/215564515-d078101d-d250-4be3-8b1b-5dd4079284b2.png)
+
 
 **DINO and TokenCut** DINO finds that the self-supervised ViT can automatically learn a certain degree of perceptual grouping of image patches.
 
@@ -40,11 +41,13 @@ TokenCut leverages the DINO features for NCut and obtaining foreground/backgroun
 
 ### MaskCut for Discovering Multiple Objects
 
-$ Figure 3
+![image](https://user-images.githubusercontent.com/59775002/215564744-4aa10f6f-3bb7-4941-8888-31dfcd2cb58c.png)
+
 
 Vanilla NCut is limited to discovering a single object in an image. thereby authors propose MaskCut that extends NCut to discover multiple objects per image by iteratively applying NCut to a masked similarity matrix. After getting the bipartition $x^t$ from NCut at stage $t$, we get two disjoint groups of patches and construct a binary mask $M^t$, where:
 
-$ Eqution 2
+![image](https://user-images.githubusercontent.com/59775002/215564657-9b7c87ba-7dc7-4bdd-9734-17f57892a35b.png)
+
 
 To determine which group corresponds to the foreground, they make use of two criteria:
 
@@ -53,7 +56,8 @@ To determine which group corresponds to the foreground, they make use of two cri
 
 To get a mask for the $(t+1)^{th}$ object, authors update the node similarity $W^{t+1}_{ij}$ via masking out these nodes corresponding to the foreground in previous stages:
 
-$ Eqution 3
+![image](https://user-images.githubusercontent.com/59775002/215564891-c9b3d067-3f3e-4094-bfb3-76598d9d5d4f.png)
+
 
 Where $M̂_{ij}= 1 − M_{ij}$. Using the updated $W^{t+1}_{ij}$, repeat Equation 1, and 2 to get a mask $M^{t+1}$. repeat this process $t$ times and set $t=3$ by default.
 
@@ -73,8 +77,10 @@ Authors use the predicted masks and proposals with a confidence score over $0.75
 
 ## Comparisons
 
-$ Table 3
+![image](https://user-images.githubusercontent.com/59775002/215564992-241cf479-b456-4c05-a06c-95fd907bd10b.png)
 
-$ Table 4
 
-$ Table 5
+![image](https://user-images.githubusercontent.com/59775002/215565028-dc5a59a6-c5ed-4e9c-a66f-01ada5bba1b3.png)
+
+
+![image](https://user-images.githubusercontent.com/59775002/215565106-4afa4b3d-42f5-481b-9594-6812165536f7.png)
