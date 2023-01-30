@@ -12,6 +12,8 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### Computer Vision
 
+[Cut and Learn for Unsupervised Object Detection and Instance Segmentation](Computer%20Vision/Cut%20and%20Learn%20for%20Unsupervised%20Object%20Detection%20and%20Instance%20Segmentation.md)
+
 [DiffusionDet: Diffusion Model for Object Detection](Computer%20Vision/Diffusion%20Model%20for%20Object%20Detection.md) - [Paper Link](https://arxiv.org/pdf/2211.09788v1.pdf)
 
 [Scalable Diffusion Models with Transformers](Computer%20Vision/Scalable%20Diffusion%20Models%20with%20Transformers.md) - [Paper Link](https://arxiv.org/pdf/2212.09748v1.pdf)
