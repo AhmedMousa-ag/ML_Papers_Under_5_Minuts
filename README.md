@@ -6,6 +6,8 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### Production
 
+[Attend-and-Excite: Attention-Based Semantic Guidance for Text-to-ImageDiffusion Models](Computer%20Vision/Attention-Based%20Semantic%20Guidance%20for%20Text-to-Image%20Diffusion%20Models.md)
+
 [Monitoring and explainability of models in production](Production/Monitoring%20and%20explainability%20of%20models%20in%20production.md) - [Paper Link](https://arxiv.org/pdf/2007.06299v1.pdf)
 
 [DDG-DA: Data Distribution Generation for Predictable Concept Drift Adaptation](Production/Data%20Distribution%20Generation%20for%20Predictable%20Concept%20Drift%20Adaptation.md) - [Paper Link](https://arxiv.org/pdf/2201.04038v2.pdf)
