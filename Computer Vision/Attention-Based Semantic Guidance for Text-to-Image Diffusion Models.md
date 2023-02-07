@@ -6,7 +6,7 @@ Authors introduce the concept of Generative Semantic Nursing (GSN), where they s
 
 ## Introduction
 
-$ Figure 1
+![image](https://user-images.githubusercontent.com/59775002/217196629-dcbeab92-de1b-4797-9bc6-2af2747e0e6b.png)
 
 Produced images by text-based image generation models do not always faithfully reflect the semantic meaning of the target prompt. thereby authors observe two key semantic issues: **1)** "catastrophic neglect", where one or more of the subjects of the prompt are not generated. **2)** "incorrect attribute binding", where the model binds attributes to the wrong subjects or fails to bind them entirely.
 
@@ -18,13 +18,13 @@ Attend-and-Excite embodies this intuition by demanding that each subject token i
 
 ## Attend-and-Excite
 
-$ Figure 3
+![image](https://user-images.githubusercontent.com/59775002/217196810-2a06ff98-cc6c-491f-9033-370d1ff33765.png)
 
 The idea of *generative semantic nursing* is authors gradually shift the noised latent code at each timestep $t$ toward a more semantically-faithful generation. At each denoising step $t$, authors consider the attention maps of the subject tokens in the prompt $P$. Intuitively, for a subject to be present in the synthesized image, it should have a high influence on some patch in the image. As such authors define a loss objective that attempts to maximize the attention values for each subject token. then update the noised latent at time $t$ according to the gradient of the computed loss. This encourages the latent at the next timestep to better incorporate all subject tokens in its representation. This manipulation occurs on the fly during inference.
 
 ### Extracting the Cross-Attention Maps
 
-$ Algorithm 1
+![image](https://user-images.githubusercontent.com/59775002/217196923-66ef792f-b32b-4f04-a160-eee3decd5f80.png)
 
 Given the input text prompt $P$, authors consider the set of all subject tokens (e.g., nouns) $S=\{s_1,....,s_k\}$ present in $P$. the objective is to extract a spatial attention map for each token $s∈ S$, indicating the influence of the token $s$ on each image patch.
 Given the noised latent $z_t$ at the current timestep, we perform a forward pass through the pre-trained UNet network using $z_t$ and $P$. then considering the resulting cross-attention map obtained after averaging all $16×16$ attention layers and heads. The resulting aggregated map $A_t$ contains $N$ spatial attention maps, one for each of the tokens of $P,i.e.A_t ∈ R ^{16×16×N}$.
@@ -40,7 +40,7 @@ To avoid such adversarial solutions, we apply a Gaussian filer over $A^s_t$ in S
 
 For each subject token in $S$, the author's optimization encourages the existence of at least one patch of $A^s_t$ with a high activation value. Therefore, they define the loss quantifying this desired behavior as
 
-$ Equation 2
+![image](https://user-images.githubusercontent.com/59775002/217197028-00de225f-6c13-40fc-b867-f2c987d23b92.png)
 
 That is, the loss attempts to strengthen the activations of the most neglected subject token at the current timestep $t$. It should be noted that different timesteps may strengthen different tokens, encouraging all neglected subject tokens to be strengthened at some timestep.
 Having computed loss $L$, we shift the current latent $z_t$ by
@@ -59,8 +59,8 @@ Specifically, we demand that each subject token reaches a maximum attention valu
 
 ### Qualitative Comparisons
 
-$ Figure 5
+![image](https://user-images.githubusercontent.com/59775002/217197345-b4ad7141-260a-48e1-9ef6-6b906f3fadce.png)
 
 ### Quantitative Analysis
 
-$ Figure 8
+![image](https://user-images.githubusercontent.com/59775002/217197497-51a69b66-3b1a-4ff9-9b27-d478fc66ff07.png)
