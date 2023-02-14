@@ -51,11 +51,10 @@ Instead of adding LayerNorms to the Transformer block, authors also propose to a
 
 ## Experiments
 
-$ Figure
+![image](https://user-images.githubusercontent.com/59775002/218676964-ba556ba2-fde1-4318-b436-7cb96b66e510.png)
 
 ### Comparison ToViT
 
-$ Table 1
 
 ### Avlations and Analysis
 
@@ -65,4 +64,4 @@ Nex table displays the accuracy gains with two alternate strategies: **Pre** is 
 
 **Post** and **Post PosEmb** achieve worse performance on smaller outputs of the embedding layer is necessary to obtain consistent improvements in accuracy across all ViT variants.
 
-$ Tabe 4
+![image](https://user-images.githubusercontent.com/59775002/218677207-43c9f641-efee-4033-b39d-22389af2ab27.png)
