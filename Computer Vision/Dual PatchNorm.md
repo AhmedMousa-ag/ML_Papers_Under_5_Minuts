@@ -31,7 +31,7 @@ Vision Transformer consists of a patch embedding layer (PE) followed by a stack 
 
 Given a sequence of $N$ patches $x ∈ R^{N ×D}$, LayerNorm as applied in ViTs consist of two operations:
 
-**(1)**   $ x = \frac {x-µ(x)}{σ(x)}$
+**(1)**   $x = \frac {x-µ(x)}{σ(x)}$
 
 **(2)**   $y = γx + β$
 
@@ -54,7 +54,6 @@ Instead of adding LayerNorms to the Transformer block, authors also propose to a
 ![image](https://user-images.githubusercontent.com/59775002/218676964-ba556ba2-fde1-4318-b436-7cb96b66e510.png)
 
 ### Comparison ToViT
-
 
 ### Avlations and Analysis
 
