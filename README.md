@@ -14,6 +14,8 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### Computer Vision
 
+[Dual PatchNorm](Computer%20Vision/Dual%20PatchNorm.md)
+
 [Cut and Learn for Unsupervised Object Detection and Instance Segmentation](Computer%20Vision/Cut%20and%20Learn%20for%20Unsupervised%20Object%20Detection%20and%20Instance%20Segmentation.md)
 
 [DiffusionDet: Diffusion Model for Object Detection](Computer%20Vision/Diffusion%20Model%20for%20Object%20Detection.md) - [Paper Link](https://arxiv.org/pdf/2211.09788v1.pdf)
