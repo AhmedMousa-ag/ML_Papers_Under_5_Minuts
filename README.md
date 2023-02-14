@@ -6,7 +6,7 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### Production
 
-[Attend-and-Excite: Attention-Based Semantic Guidance for Text-to-ImageDiffusion Models](Computer%20Vision/Attention-Based%20Semantic%20Guidance%20for%20Text-to-Image%20Diffusion%20Models.md)
+[Attend-and-Excite: Attention-Based Semantic Guidance for Text-to-ImageDiffusion Models](Computer%20Vision/Attention-Based%20Semantic%20Guidance%20for%20Text-to-Image%20Diffusion%20Models.md) - [Paper Link](https://arxiv.org/pdf/2301.13826.pdf)
 
 [Monitoring and explainability of models in production](Production/Monitoring%20and%20explainability%20of%20models%20in%20production.md) - [Paper Link](https://arxiv.org/pdf/2007.06299v1.pdf)
 
@@ -14,9 +14,9 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### Computer Vision
 
-[Dual PatchNorm](Computer%20Vision/Dual%20PatchNorm.md)
+[Dual PatchNorm](Computer%20Vision/Dual%20PatchNorm.md) - [Paper Link](https://arxiv.org/pdf/2302.01327v2.pdf)
 
-[Cut and Learn for Unsupervised Object Detection and Instance Segmentation](Computer%20Vision/Cut%20and%20Learn%20for%20Unsupervised%20Object%20Detection%20and%20Instance%20Segmentation.md)
+[Cut and Learn for Unsupervised Object Detection and Instance Segmentation](Computer%20Vision/Cut%20and%20Learn%20for%20Unsupervised%20Object%20Detection%20and%20Instance%20Segmentation.md) - [Paper Link](https://arxiv.org/pdf/2301.11320.pdf)
 
 [DiffusionDet: Diffusion Model for Object Detection](Computer%20Vision/Diffusion%20Model%20for%20Object%20Detection.md) - [Paper Link](https://arxiv.org/pdf/2211.09788v1.pdf)
 
