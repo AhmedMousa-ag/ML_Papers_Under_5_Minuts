@@ -36,7 +36,7 @@ This process yields 12 MuLan audio tokens $M_A$ for an audio sequence. During in
 
 Authors propose a hierarchical sequence-to-sequence modeling task, where each stage is modeled autoregressively by a separate decoder-only Transformer.
 
-The first stage is the *** semantic modeling*** stage, which learns the mapping from **MuLan** audio tokens to the semantic tokens $S$, by modeling the distribution $p(S_t|S_{<t},M_A)$, where $t$ is the position in the sequence corresponding to a time step.
+The first stage is the ***semantic modeling*** stage, which learns the mapping from **MuLan** audio tokens to the semantic tokens $S$, by modeling the distribution $p(S_t|S_{<t},M_A)$, where $t$ is the position in the sequence corresponding to a time step.
 
 The second stage is ***acoustic modeling*** stage, where acoustic tokens $A_q$ are predicted conditioned on both the MuLan audio tokens and the semantic tokens, modeling the distribution $p(A_t|A_{<t},S,M_A)$.
 
