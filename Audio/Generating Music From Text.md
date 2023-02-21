@@ -16,7 +16,7 @@ And to address the lack of evaluation data for this task, authors introduce **Mu
 
 ## Method
 
-$ Figure 1
+![image](https://user-images.githubusercontent.com/59775002/220276983-4bf762e5-c25d-4947-ac22-cf66558529b1.png)
 
 ### Representation and Tokenization of Audio and Text
 
@@ -32,7 +32,7 @@ This process yields 12 MuLan audio tokens $M_A$ for an audio sequence. During in
 
 ### Hierarchical Modeling of Audio Representations
 
-$ Figure 2
+![image](https://user-images.githubusercontent.com/59775002/220277112-78fd02f8-3445-4638-b56c-8ee124f2300b.png)
 
 Authors propose a hierarchical sequence-to-sequence modeling task, where each stage is modeled autoregressively by a separate decoder-only Transformer.
 
@@ -42,4 +42,4 @@ The second stage is ***acoustic modeling*** stage, where acoustic tokens $A_q$ a
 
 ## Comparison
 
-$Table 1
+![image](https://user-images.githubusercontent.com/59775002/220277226-236873f9-6cc6-4d61-ac1c-0c2652d7815b.png)
