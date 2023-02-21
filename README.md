@@ -32,6 +32,10 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 [TimeVAE: A Variational Auto-Encoder For Multivariate Time Series Generation](Data%20Synthetic/A%20Variational%20Auto-Encoder%20For%20Multivariate%20Time%20Series%20Generation.md) - [Paper Link](https://arxiv.org/pdf/2111.08095.pdf)
 
+### Audio
+
+[MusicLM: Generating Music From Text](Audio/Generating%20Music%20From%20Text.md) - [Paper Link](https://arxiv.org/pdf/2301.11325v1.pdf)
+
 ### Others
 
 [Rethinking Mobile Block for Efficient Neural Models](Others/Rethinking%20Mobile%20Block%20for%20Efficient%20Neural%20Models.md) - [Paper Link](https://arxiv.org/pdf/2301.01146v1.pdf)
