@@ -14,6 +14,8 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### Computer Vision
 
+[Composer: Creative and Controllable Image Synthesis with Composable Conditions](Computer%20Vision/Creative%20and%20Controllable%20Image%20Synthesis%20with%20Composable%20Conditions.md) - [Paper Link](https://arxiv.org/pdf/2302.09778v2.pdf)
+
 [Dual PatchNorm](Computer%20Vision/Dual%20PatchNorm.md) - [Paper Link](https://arxiv.org/pdf/2302.01327v2.pdf)
 
 [Cut and Learn for Unsupervised Object Detection and Instance Segmentation](Computer%20Vision/Cut%20and%20Learn%20for%20Unsupervised%20Object%20Detection%20and%20Instance%20Segmentation.md) - [Paper Link](https://arxiv.org/pdf/2301.11320.pdf)
