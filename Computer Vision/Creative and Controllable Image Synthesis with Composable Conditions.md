@@ -39,7 +39,7 @@ Conditions within $(c_2,c_1)$ are emphasized with a guidance weight of $ω$, tho
 
 Authors decompose an image into decoupled representations that capture various aspects of it. they extract eight representations in this work on-the-fly during training.
 
-***Caption:* **Authors directly use title or description information in image-text training data as image captions.
+***Caption:*** Authors directly use title or description information in image-text training data as image captions.
 
 ***Semantics and style:*** Authors use image embedding extracted by the pre-trained CLIP ViT-L/14@336px (Radford et al.,2021) model to represent the semantics and style of an image, similar to unCLIP(Ramesh et al., 2022).
 
