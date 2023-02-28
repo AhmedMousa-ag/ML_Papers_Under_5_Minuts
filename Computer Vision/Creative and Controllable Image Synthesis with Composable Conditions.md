@@ -8,7 +8,8 @@ They decompose an image into representative factors and then train a diffusion m
 
 ## Introduction
 
-$Figure 1
+![image](https://user-images.githubusercontent.com/59775002/221852744-2f2ebc81-921d-4c7b-9303-5240584b0c06.png)
+
 
 Generative models often struggle to accurately produce images with specifications for semantics, shape, style, and color all at once.
 Authors argue that the key to controllable image generation relies not only on conditioning but even more significantly on **Compositionality** (Lake et al.,2017) where we can exponentially expand the control space by introducing an enormous number of potential combinations. Similar concepts are explored in the field of language and scene understanding, where the compositionality is termed *compositional generalization,* the skill of recognizing or generating a potentially infinite number of novel combinations from a limited number of known components.
@@ -20,7 +21,7 @@ While conceptually simple and easy to implement, Composer is surprisingly powerf
 
 ## Method
 
-$ Figure 2
+![image](https://user-images.githubusercontent.com/59775002/221853059-dd2aad6b-7039-4759-ac7b-327d485f1fe5.png)
 
 ### Diffusion Models
 
@@ -60,10 +61,10 @@ They explore two different mechanisms to condition the model on their representa
 ***1) Global conditioning:*** For global representations including CLIP sentence embeddings, image embeddings and color palettes, authors project and add them to the timestep embedding.
 In addition, the authors project image embedding and color palettes into eight extra tokens and concatenate them with CLIP word embeddings, which are then used as the context for cross-attention in GLIDE, similar to unCLIP(Ramesh et al., 2022).
 
-$Figure 7
+![image](https://user-images.githubusercontent.com/59775002/221853540-f1af221e-8f82-45f9-a697-fe7f1cb75697.png)
 
 ***2) Localized conditioning:*** For localized representations including sketches, segmentation masks, depth maps, intensity images, and masked images, authors project them into uniform-dimensional embeddings with the same spatial size as the noisy latent $x_t$ using stacked convolutional layers. Then compute the sum of these embeddings and concatenate the result to $x_t$ before feeding it into the UNet.
 
-$Figure 8
+![image](https://user-images.githubusercontent.com/59775002/221853754-016aca0d-5fe9-4122-92ef-675566e00759.png)
 
 ***Joint training strategy:*** It is essential to devise a joint training strategy that enables the model to learn to decode images from a variety of combinations of conditions. The authors used simple and effective configurations where they used an independent dropout probability of 0.5 for each condition, a probability of 0.1 for dropping all conditions, and a probability of 0.1 for retaining all conditions. They used a special dropout probability of 0.7 for intensity images because they contain the vast majority of information about the images and may underweight other conditions during training.
