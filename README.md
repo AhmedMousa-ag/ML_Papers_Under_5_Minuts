@@ -40,6 +40,8 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### Others
 
+[Dropout Reduces Underfitting](Others/Dropout%20Reduces%20Underfitting.md) - [Paper Link](https://arxiv.org/pdf/2303.01500v1.pdf)
+
 [Rethinking Mobile Block for Efficient Neural Models](Others/Rethinking%20Mobile%20Block%20for%20Efficient%20Neural%20Models.md) - [Paper Link](https://arxiv.org/pdf/2301.01146v1.pdf)
 
 [Dynamically Expandable Representation for Class Incremental Learning](Others/Dynamically%20Expandable%20Representation%20for%20Class%20Incremental%20Learning.md) - [Paper Link](https://arxiv.org/pdf/2103.16788v1.pdf)
