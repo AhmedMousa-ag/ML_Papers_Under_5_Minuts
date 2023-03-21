@@ -14,6 +14,8 @@ This repository includes a summary of Machine Learning papers to read under 5 mi
 
 ### Computer Vision
 
+[FateZero: Fusing Attentions for Zero-shot Text-based Video Editing](Computer%20Vision/Fusing%20Attentions%20for%20Zero-shot%20Text-based%20Video%20Editing.md) - [Paper Link](https://arxiv.org/pdf/2303.09535v1.pdf)
+
 [Composer: Creative and Controllable Image Synthesis with Composable Conditions](Computer%20Vision/Creative%20and%20Controllable%20Image%20Synthesis%20with%20Composable%20Conditions.md) - [Paper Link](https://arxiv.org/pdf/2302.09778v2.pdf)
 
 [Dual PatchNorm](Computer%20Vision/Dual%20PatchNorm.md) - [Paper Link](https://arxiv.org/pdf/2302.01327v2.pdf)
