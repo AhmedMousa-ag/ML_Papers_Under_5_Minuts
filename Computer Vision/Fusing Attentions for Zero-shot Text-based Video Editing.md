@@ -20,7 +20,7 @@ Author's contribution can be summarized as follows:
 
 ## Methods
 
-$Figure 2
+![image](https://user-images.githubusercontent.com/59775002/226563043-a47becd7-dd8e-41ca-b685-9bc9809cd0e3.png)
 
 ### FateZero Video Editing
 
@@ -44,7 +44,7 @@ $M_t = HEAVISIDESTEP(c^{src}_t,τ),$
 
 $s^{fused}_t = M_t ⊙ s^{edit}_t + (1-M_t) ⊙ s^{src}_t.$
 
-$Figure 4
+![image](https://user-images.githubusercontent.com/59775002/226563179-25268a2d-7fca-4b20-a1c3-775ee31b7ec3.png)
 
 **Spatial-Temporal Self-Attention:** Denoising each frame individually produces inconsistent video. Inspired by the casual self-attention and recent one-shot video generation method. authors reshape the original self-attention to Spatial-Temporal Self-Attention without changing pre-trained weights. Specifically, they implement $ATTENTION(Q,K,V)$ for feature $z^i$ at temporal index $i ∈ [1,n]$ as
 
@@ -58,12 +58,10 @@ Different from appearance editing, reforming the shape of a specific object in t
 
 ## Comparison
 
-$Figure 7
+![image](https://user-images.githubusercontent.com/59775002/226563310-42f75d4b-e947-43c7-aec8-dcf63cf66e61.png)
 
-$Table 1
+![image](https://user-images.githubusercontent.com/59775002/226563386-b933d4c7-76eb-4bbd-baee-99293185891b.png)
 
-$Figure 8
+![image](https://user-images.githubusercontent.com/59775002/226563467-a1750e70-6374-4553-9038-ad417b2cb0ae.png)
 
-$Figure 9
-
-## Extra
+![image](https://user-images.githubusercontent.com/59775002/226563635-1b0c41c4-def2-4582-800a-0b028b548ff6.png)
